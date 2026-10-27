@@ -1,0 +1,96 @@
+<!doctype html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover"><title>논문 MBTI | 나의 논문 준비 유형</title><style>
+@import url('https://fonts.googleapis.com/css2?family=Jua&family=Nunito:wght@500;700;800&display=swap');
+:root{--navy:#244662;--blue:#76a7c9;--line:#b9d9ed;--ink:#24394b}*{box-sizing:border-box}body{margin:0;background:linear-gradient(160deg,#eaf6ff,#fff5f7 85%);font-family:'Jua','Apple SD Gothic Neo','Malgun Gothic',sans-serif;color:var(--ink)}.shell{max-width:450px;margin:0 auto;min-height:100dvh;padding:18px 14px 26px}.panel{position:relative;overflow:hidden;background:linear-gradient(#fff,#f9fdff);border:2px solid var(--line);border-radius:28px;min-height:calc(100dvh - 44px);padding:22px 20px;box-shadow:0 12px 32px #6d9fbb20}.center{text-align:center}.pill{display:inline-block;background:#e1f1ff;border-radius:50px;padding:8px 19px;color:#285477;font-size:17px}.hero{padding-top:26px}.hero h1{font-size:52px;margin:18px 0 4px;letter-spacing:-2px;color:#254966}.hero h1 span{color:#df9b63}.subtitle{font-size:19px;margin:0 0 24px}.bubble{background:#fff;border-radius:24px;padding:14px;max-width:280px;margin:0 auto;box-shadow:0 4px 20px #bdd8e54f;font-size:17px}.bear{width:205px;height:210px;display:block;margin:20px auto 10px}.primary{width:100%;border:0;border-radius:18px;background:#244b68;color:white;padding:17px 10px;font-family:inherit;font-size:21px;cursor:pointer;box-shadow:0 5px 0 #17334b}.primary:active{transform:translateY(3px);box-shadow:0 2px 0 #17334b}.foot{font-size:13px;color:#7890a1;margin-top:22px}.top{display:flex;align-items:center;justify-content:space-between;font-size:16px}.back{border:0;background:transparent;font-size:28px;color:var(--navy);cursor:pointer}.progress{display:flex;gap:5px;margin:16px 0 38px}.progress i{height:9px;border-radius:20px;flex:1;background:#e0edf6}.progress i.on{background:#6b9fbe}.qtag{display:table;margin:0 auto 18px;background:#dceffd;border-radius:50px;padding:7px 17px;color:#244a67;font-size:22px}.question{font-size:27px;line-height:1.45;text-align:center;min-height:110px;word-break:keep-all}.question em{font-style:normal;background:linear-gradient(transparent 64%,#fff0ae 64%)}.answers{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px}.answer{min-height:118px;border:0;border-radius:22px;padding:14px 8px;font-family:inherit;font-size:24px;cursor:pointer;color:#284b64}.answer small{display:block;font-size:14px;margin-top:9px;line-height:1.4}.yes{background:#d9efff}.no{background:#ffe4e7;color:#85474e}.answer:active{transform:scale(.97)}.result{margin:-22px -12px -16px;padding:12px 12px 24px;min-height:calc(100dvh - 80px);border-radius:22px;text-align:center}.r1{background:linear-gradient(#e6f9ff,#f2fbff)}.r2{background:linear-gradient(#fff5d7,#fffaf0)}.r3{background:linear-gradient(#ffe8ed,#fff7f8)}.result h1{font-size:46px;margin:4px 0}.result .type{display:inline-block;border-radius:40px;padding:7px 21px;background:#669cb6;color:white;margin:10px auto 2px}.r2 .type{background:#d4a14b}.r3 .type{background:#d87d87}.result .desc{font-size:17px;line-height:1.5;white-space:pre-line}.result .bear{width:170px;height:155px;margin:0 auto}.advice{background:#fffefb;border-radius:20px;text-align:left;padding:18px 15px;margin:6px 0 18px;box-shadow:0 4px 14px #0000000a}.advice h3{font-size:19px;margin:0 0 14px}.advice p{display:flex;gap:8px;align-items:flex-start;margin:12px 0;font-size:16px;line-height:1.4}.check{color:#66a5ca;font-size:18px}.r2 .check{color:#d7a94d}.r3 .check{color:#d98492}.quote{font-size:14px;line-height:1.6;margin:22px 0 10px}.secondary{border:2px solid #a4c7dc;background:#fff;color:#315b78;padding:12px 18px;border-radius:14px;font:inherit;font-size:16px;cursor:pointer;margin-top:14px}.hide{display:none}.note{font-size:12px;line-height:1.5;color:#678197;margin-top:12px}#save{margin-top:4px}#toast{position:fixed;bottom:25px;left:50%;transform:translateX(-50%);background:#263f56;color:white;border-radius:30px;padding:10px 20px;display:none;white-space:nowrap;z-index:10}@media(min-width:700px){.shell{padding-top:30px}.panel{min-height:720px}.hero{padding-top:50px}}
+
+/* 결과 화면에서는 화면 높이에 맞춘 강제 여백을 없애고 콘텐츠에 맞게 표시 */
+.shell:has(.result){min-height:0;padding-bottom:10px}
+.panel:has(.result){min-height:0;padding-bottom:10px}
+.result{min-height:0!important;padding-bottom:10px}
+@media(max-width:600px){
+ .shell:has(.result){padding:8px 10px 10px}
+ .panel:has(.result){padding:12px 12px 10px;border-radius:22px}
+ .result{margin:-12px -12px -10px;padding:12px 14px 12px}
+ .result h1{font-size:39px;margin:3px 0}
+ .result .type{margin:5px auto 2px}
+ .result .desc{font-size:15px;line-height:1.35}
+ .result .bear{width:135px;height:125px;margin:0 auto}
+ .advice{padding:14px 13px;margin:4px 0 10px}
+ .advice h3{margin-bottom:8px}
+ .advice p{margin:8px 0;font-size:15px;line-height:1.35}
+ .result .primary{padding:13px 10px;font-size:18px}
+ .result .secondary{margin-top:9px;padding:9px 15px}
+ .result .quote{margin:13px 0 6px;line-height:1.4}
+ .result .note{margin-top:6px}
+ .personal-result{font-size:15px;padding:8px 10px;margin:0 auto 8px}
+}
+
+/* iPhone / Apps Script 모바일 첫 화면 최적화 */
+html{width:100%;min-height:100%;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{width:100%;min-width:0;min-height:100vh;min-height:100dvh}
+.shell{width:100%;max-width:450px;min-height:100vh;min-height:100dvh}
+.panel{width:100%}
+@media(max-width:600px){
+ .shell{max-width:none;padding:10px 10px max(10px,env(safe-area-inset-bottom))}
+ .panel{min-height:calc(100vh - 20px);min-height:calc(100dvh - 20px);padding:clamp(18px,5vw,26px) clamp(16px,5vw,24px);border-radius:25px}
+ .panel:has(.hero){display:flex;flex-direction:column;justify-content:center}
+ .hero{padding-top:0;width:100%}
+ .hero h1{font-size:clamp(44px,12vw,58px);margin:14px 0 6px}
+ .hero .subtitle{font-size:clamp(17px,4.7vw,21px);margin-bottom:20px}
+ .hero .bubble{font-size:clamp(16px,4.2vw,19px);max-width:100%;width:min(100%,315px)}
+ .hero .bear{width:min(58vw,225px);height:auto;aspect-ratio:205/210;margin:clamp(15px,3vh,30px) auto}
+ .hero .primary{font-size:clamp(19px,5.2vw,23px);padding:18px 10px}
+ .hero .foot{margin-top:18px}
+}
+@media(max-width:600px) and (max-height:700px){
+ .hero .bear{width:min(43vw,160px);margin:8px auto}
+ .hero h1{margin:7px 0 4px}
+ .hero .subtitle{margin-bottom:10px}
+ .hero .foot{margin-top:10px}
+}
+.personal-result{display:table;max-width:100%;margin:2px auto 10px;padding:9px 17px;border-radius:30px;background:#ffffffd9;color:#365b70;font-size:17px;overflow-wrap:anywhere}.personal-result strong{color:#244b68}.personal-star{color:#e5b95d}.nickname-wrap{max-width:310px;margin:12px auto 16px;text-align:left}.nickname-wrap label{display:block;font-size:17px;margin:0 0 7px}.nickname-wrap input{width:100%;border:2px solid #b9d9ed;border-radius:14px;background:#fff;padding:13px 15px;font:inherit;font-size:19px;outline-color:#6b9fbe}.nickname-wrap .note{margin:7px 0 0}.hero{padding-top:8px}.hero .bear{width:160px;height:155px;margin:8px auto}.hero h1{margin:10px 0 2px;font-size:45px}.hero .subtitle{margin-bottom:12px}.hero .bubble{padding:9px}.hero .foot{margin-top:15px}
+</style></head><body><div class="shell"><main class="panel" id="app"></main></div><div id="toast"></div><script>
+const qs={q1:{t:'연구하고 싶은 분야가<br><em>어느 정도 정해져</em> 있나요?',yes:'q2',no:'q4',y:'정해져 있어요',n:'아직 모르겠어요'},q2:{t:'연구 주제가 <em>구체적으로</em><br>떠오르나요?',yes:'q3',no:'type2',y:'구체적인 주제가 떠올라요',n:'아직 구체적이지 않아요'},q3:{t:'지도교수님과<br>논문 주제에 대해<br><em>이미 논의했나요?</em>',yes:'type1',no:'type2',y:'논의했어요',n:'아직 논의하지 않았어요'},q4:{t:'관심 있는 수업이나<br><em>교육 경험</em>이 있나요?',yes:'q5',no:'type3',y:'관심 있는 분야가 있어요',n:'딱히 떠오르는 게 없어요'},q5:{t:'관련 논문을 읽어보며<br><em>탐색해 보고 싶은 분야</em>가<br>생겼나요?',yes:'type2',no:'type3',y:'탐색하고 싶은 분야가 생겼어요',n:'아직 찾지 못했어요'}};
+const types={type1:{num:1,name:'실행형',desc:'주제가 뚜렷하고\n지도교수님과 논의까지 마친 유형',advice:['연구 문제와 연구 방법을 구체화하기','연구 일정과 자료 수집 계획 세우기','지도교수님과 꾸준히 진행 상황 공유하기','학술지 투고를 염두에 두고 미리 준비하기'],color:'#e6f9ff',accent:'#4d95b4'},type2:{num:2,name:'탐색형',desc:'관심 분야는 있지만\n아직 구체적인 주제를 고민 중인 유형',advice:['관심 분야의 선행연구를 폭넓게 읽기','연구의 한계와 후속 연구 제언 살펴보기','여러 주제를 비교하며 연구 문제 좁히기','지도교수님과 연구 방향에 대해 논의하기'],color:'#fff4d6',accent:'#d0a04a'},type3:{num:3,name:'출발형',desc:'관심 분야부터\n찾아야 하는 유형',advice:['대학원 수업에서 흥미로웠던 내용 떠올리기','교육과정의 변화와 교육 현장 돌아보기','지도교수님께 관심을 두고 계신 연구 분야 여쭤보기','지도교수님께 연구 주제에 대한 조언 구하기'],color:'#ffe9ee',accent:'#d87988'}};
+let current='intro',history=[],participantName='';const app=document.getElementById('app');
+function bear(mode='book'){let prop=mode==='search'?'<circle cx="154" cy="129" r="25" fill="#d9f0ff" stroke="#263d4d" stroke-width="6"/><path d="M172 147l25 29" stroke="#263d4d" stroke-width="9" stroke-linecap="round"/>':mode==='laptop'?'<rect x="58" y="129" width="105" height="57" rx="8" fill="#bedde9" stroke="#263d4d" stroke-width="5"/><path d="M45 186h133" stroke="#263d4d" stroke-width="6"/>':'<path d="M65 133q29-13 55 6q24-19 49-6v49q-25-10-49 5q-27-15-55-5z" fill="#ffe1df" stroke="#263d4d" stroke-width="5"/><path d="M120 139v47" stroke="#263d4d" stroke-width="3"/>';return `<svg class="bear" viewBox="0 0 220 220" aria-label="귀여운 곰 캐릭터" role="img"><g stroke="#263d4d" stroke-width="5" stroke-linejoin="round"><path d="M48 88q-12-38 19-44q19-3 30 17q20-6 37 0q11-20 31-17q32 7 18 44q20 22 15 59q-4 51-87 52q-82 0-87-52q-4-35 24-59z" fill="white"/><ellipse cx="72" cy="123" rx="11" ry="8" fill="#ffced4" stroke="none"/><ellipse cx="150" cy="123" rx="11" ry="8" fill="#ffced4" stroke="none"/></g><g fill="#263d4d"><circle cx="90" cy="112" r="4"/><circle cx="132" cy="112" r="4"/><ellipse cx="111" cy="123" rx="5" ry="4"/></g><path d="M103 133q8 10 16 0" fill="none" stroke="#263d4d" stroke-width="3" stroke-linecap="round"/>${prop}<path d="M34 56l-12-9m177 3l12-9M106 30v-14" stroke="#f2c65e" stroke-width="5" stroke-linecap="round"/></svg>`}
+function safeText(value){return String(value).replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]))}
+function render(){if(current==='intro'){app.innerHTML=`<div class="center hero"><span class="pill">대학원생을 위한 미니 테스트</span><h1>논문 MBT<span>I</span></h1><p class="subtitle">나는 어떤 논문 준비 유형일까?</p><div class="bubble">5개의 질문으로 알아보는<br>나의 논문 준비 유형</div>${bear()}<div class="nickname-wrap"><label for="nickname">✏️ 이름 또는 닉네임</label><input id="nickname" type="text" maxlength="24" placeholder="예: 행복한 연구자" autocomplete="nickname"><p class="note">검사 결과와 입력한 이름은 진행자 통계에 저장됩니다. 실명 대신 닉네임을 권장해요.</p></div><button class="primary" onclick="startTest()">테스트 시작하기 →</button><p class="foot">회원가입 없이 참여 · 약 1분 소요</p></div>`;return}if(current.startsWith('type')){let r=types[current];app.innerHTML=`<div class="result r${r.num}"><div class="personal-result"><span class="personal-star">✦</span> <strong>${safeText(participantName)}</strong>님의 논문 MBTI 결과 <span class="personal-star">✦</span></div><div class="type">TYPE ${r.num}</div><h1>${r.name}</h1><div class="desc">${r.desc}</div>${bear(r.num===2?'search':r.num===1?'laptop':'book')}<div class="advice"><h3>♡ ${safeText(participantName)}님을 위한 맞춤 조언</h3>${r.advice.map(x=>`<p><span class="check">●</span><span>${x}</span></p>`).join('')}</div><button class="primary" id="save" onclick="saveImage()">↓ 결과 이미지 저장하기</button><button class="secondary" onclick="restart()">↻ 다시 테스트하기</button><p class="quote">“논문의 출발점은 모두 다르지만,<br>작은 시작이 한 편의 논문으로 이어질 수 있습니다.”</p><p class="note">※ 재미로 살펴보는 논문 준비 단계 테스트입니다.<br>검사 결과는 통계 집계를 위해 저장됩니다. 이름 대신 닉네임을 권장합니다.</p></div>`;return}let q=qs[current],idx=['q1','q2','q3','q4','q5'].indexOf(current)+1;app.innerHTML=`<div class="top"><button class="back" onclick="back()">‹</button><span>${idx} / 5</span></div><div class="progress">${Array.from({length:5},(_,i)=>`<i class="${i<idx?'on':''}"></i>`).join('')}</div><div class="qtag">Q${idx}</div><div class="question">${q.t}</div>${bear(current==='q5'?'search':current==='q3'?'laptop':'book')}<div class="answers"><button class="answer yes" onclick="go('${q.yes}')">네!<small>${q.y}</small></button><button class="answer no" onclick="go('${q.no}')">아니요<small>${q.n}</small></button></div><p class="foot center">나의 현재 상태에 가장 가까운 답을 골라 주세요.</p>`}
+function startTest(){
+  const name=(document.getElementById('nickname')?.value||'').trim();
+  if(!name){toast('이름이나 닉네임을 입력해 주세요.');document.getElementById('nickname').focus();return}
+  participantName=name;
+  go('q1');
+}
+function go(next){history.push(current);current=next;render();window.scrollTo(0,0);if(types[next])submitResult(next)}
+// A browser session contributes one result. Retaking the test updates that result.
+function submitResult(type){
+  if(window.firebaseSaveResult) window.firebaseSaveResult(type,participantName);
+  else window.addEventListener('firebase-ready',()=>window.firebaseSaveResult(type,participantName),{once:true});
+} function back(){current=history.pop()||'intro';render()}function restart(){history=[];current='intro';render();const input=document.getElementById('nickname');if(input)input.value=participantName}
+function toast(s){let t=document.getElementById('toast');t.textContent=s;t.style.display='block';setTimeout(()=>t.style.display='none',2800)}
+function saveImage(){let r=types[current];if(!r)return;const W=1080,H=1620,c=document.createElement('canvas');c.width=W;c.height=H;const g=c.getContext('2d');g.fillStyle=r.color;g.fillRect(0,0,W,H);g.textAlign='center';g.fillStyle='#344d61';g.font='40px "Jua","Malgun Gothic",sans-serif';g.fillText('대학원생을 위한 논문 MBTI',540,115);round(g,380,160,320,85,42,r.accent);g.fillStyle='white';g.font='bold 45px sans-serif';g.fillText('TYPE '+r.num,540,219);g.fillStyle='#223b50';g.font='bold 108px "Jua","Malgun Gothic",sans-serif';g.fillText(r.name,540,360);g.font='39px "Jua","Malgun Gothic",sans-serif';r.desc.split('\n').forEach((s,i)=>g.fillText(s,540,430+i*55));
+const displayName=participantName||'연구자';
+round(g,140,525,800,88,44,'#ffffff');g.fillStyle='#355b74';
+let label=displayName+'님의 논문 MBTI 결과';
+g.font='bold 41px "Jua","Malgun Gothic",sans-serif';
+while(g.measureText(label).width>740){let size=parseInt(g.font.match(/\d+px/)[0]);if(size<=22)break;g.font='bold '+(size-2)+'px "Jua","Malgun Gothic",sans-serif'}
+g.fillText(label,540,582);drawBear(g,540,730,r.num);round(g,70,840,940,565,40,'#ffffff');g.textAlign='left';g.fillStyle='#30495c';g.font='bold 48px "Jua","Malgun Gothic",sans-serif';let adviceHeader='♡ '+displayName+'님을 위한 맞춤 조언';while(g.measureText(adviceHeader).width>830){let fs=parseInt(g.font.match(/\d+px/)[0]);if(fs<=24)break;g.font='bold '+(fs-2)+'px "Jua","Malgun Gothic",sans-serif'}g.fillText(adviceHeader,125,935);g.font='36px "Jua","Malgun Gothic",sans-serif';r.advice.forEach((s,i)=>{g.fillStyle=r.accent;g.beginPath();g.arc(140,1022+i*88,14,0,Math.PI*2);g.fill();g.fillStyle='#30495c';wrap(g,s,175,1036+i*88,780,44)});g.textAlign='center';g.fillStyle='#536e80';g.font='33px "Jua","Malgun Gothic",sans-serif';g.fillText('논문의 출발점은 모두 다르지만,',540,1480);g.fillText('작은 시작이 한 편의 논문으로 이어질 수 있습니다.',540,1530);c.toBlob(blob=>{if(!blob){toast('이미지 생성에 실패했어요.');return}let file=new File([blob],`논문MBTI_${safeFileName(participantName)}_${r.name}.png`,{type:'image/png'});if(navigator.canShare&&navigator.canShare({files:[file]})){navigator.share({files:[file],title:'나의 논문 MBTI'}).catch(()=>download(blob,r.name))}else download(blob,r.name)},'image/png')}
+function safeFileName(value){return String(value||'연구자').replace(/[\\/:*?"<>|\x00-\x1f]/g,'_').slice(0,24)}function download(blob,name){let a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=`논문MBTI_${safeFileName(participantName)}_${name}.png`;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),1000);toast('이미지를 저장했어요! 저장 위치를 확인해 주세요.')}function round(g,x,y,w,h,r,col){g.fillStyle=col;g.beginPath();g.roundRect(x,y,w,h,r);g.fill()}function wrap(g,t,x,y,max,line){let words=t.split(' '),s='',n=0;for(let w of words){let z=s+w+' ';if(g.measureText(z).width>max&&s){g.fillText(s,x,y+n*line);n++;s=w+' '}else s=z}g.fillText(s,x,y+n*line)}function drawBear(g,x,y,num){g.save();g.translate(x,y);g.lineWidth=10;g.strokeStyle='#263d4d';g.fillStyle='white';g.beginPath();g.arc(-105,-115,53,0,Math.PI*2);g.arc(105,-115,53,0,Math.PI*2);g.fill();g.stroke();g.beginPath();g.ellipse(0,-12,175,155,0,0,Math.PI*2);g.fill();g.stroke();g.fillStyle='#ffccd5';for(let a of [-93,93]){g.beginPath();g.ellipse(a,4,25,17,0,0,Math.PI*2);g.fill()}g.fillStyle='#263d4d';for(let a of [-49,49]){g.beginPath();g.arc(a,-24,9,0,Math.PI*2);g.fill()}g.beginPath();g.ellipse(0,-1,10,8,0,0,Math.PI*2);g.fill();g.beginPath();g.arc(0,10,15,0,Math.PI);g.stroke();g.font='bold 92px sans-serif';g.textAlign='center';g.fillStyle=num===2?'#d1a04c':num===3?'#d87988':'#609cbb';g.fillText(num===2?'⌕':num===3?'?':'✦',122,120);g.restore()}
+render();
+</script><script type="module">
+import {initializeApp} from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js';
+import {getFirestore,collection,addDoc,serverTimestamp} from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js';
+const firebaseConfig = {apiKey:"AIzaSyA3Qyf5PP8uiCZUt0c2N5EcqgMXEqDOy_E",authDomain:"paper-mbti.firebaseapp.com",projectId:"paper-mbti",storageBucket:"paper-mbti.firebasestorage.app",messagingSenderId:"150786814220",appId:"1:150786814220:web:0e6f8876b0564ede7f5929"};
+try {
+ const db=getFirestore(initializeApp(firebaseConfig));
+ window.firebaseSaveResult=async (type,name)=>{
+  // 동일 브라우저 탭에서 중복 전송 방지. 새 기기/탭의 중복 참여는 별도로 집계될 수 있습니다.
+  if(sessionStorage.getItem('paperMBTISubmitted')) return;
+  try {
+   await addDoc(collection(db,'results'),{name:String(name).slice(0,24),type,createdAt:serverTimestamp()});
+   sessionStorage.setItem('paperMBTISubmitted','1');
+  } catch(err) {console.error('결과 저장 실패',err);toast('결과 저장에 실패했어요. 인터넷 연결을 확인해 주세요.')}
+ };
+ window.dispatchEvent(new Event('firebase-ready'));
+} catch(err) {console.error(err);toast('통계 연결 오류가 발생했어요.')}
+</script></body></html>

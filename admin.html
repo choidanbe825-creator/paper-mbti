@@ -3,7 +3,7 @@
 import {initializeApp} from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js';
 import {getAuth,signInWithEmailAndPassword,onAuthStateChanged,signOut} from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js';
 import {getFirestore,collection,onSnapshot,query,orderBy} from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js';
-const firebaseConfig = {apiKey:"AIzaSyA3Qyf5PP8uicUZt0c2N5FcgqMXEqDOy_E",authDomain:"paper-mbti.firebaseapp.com",projectId:"paper-mbti",storageBucket:"paper-mbti.firebasestorage.app",messagingSenderId:"150786814220",appId:"1:150786814220:web:0e6f8876b0564ede7f5929"};
+const firebaseConfig = {apiKey:"AIzaSyA3Qyf5PP8uiCZUt0c2N5EcqgMXEqDOy_E",authDomain:"paper-mbti.firebaseapp.com",projectId:"paper-mbti",storageBucket:"paper-mbti.firebasestorage.app",messagingSenderId:"150786814220",appId:"1:150786814220:web:0e6f8876b0564ede7f5929"};
 const app=initializeApp(firebaseConfig),auth=getAuth(app),db=getFirestore(app);let unsubscribe=null;
 const el=id=>document.getElementById(id),labels={type1:'실행형',type2:'탐색형',type3:'출발형'};
 el('loginForm').onsubmit=async e=>{e.preventDefault();el('status').textContent='로그인 중...';try{await signInWithEmailAndPassword(auth,el('email').value,el('password').value);el('password').value='';el('status').textContent='';}catch(err){el('status').textContent='로그인에 실패했습니다. 이메일과 비밀번호를 확인해 주세요.';}};
